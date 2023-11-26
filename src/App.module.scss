@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .editor {
+    height: 90%;
+    width: 45%;
+    textarea {
+      font-family: "Courier New", Courier, monospace;
+      height: 100%;
+      width: 90%;
+      padding: 10px;
+      background: #1e1e1e;
+      color: white;
+    }
+  }
+  .formBuilder {
+    height: 90%;
+    width: 45%;
+    padding: 10px;
+    background: #fcecff;
+    color: rgb(44, 44, 44);
+    border: 1px solid #eba7f6;
+    border-radius: 5px;
+    overflow-y: scroll;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #8193a8;
+}

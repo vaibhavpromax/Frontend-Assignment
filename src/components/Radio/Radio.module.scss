@@ -1,0 +1,18 @@
+.radioGroup {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  .tab {
+    background-color: rgb(197, 136, 254);
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(253, 248, 248);
+    font-weight: 400;
+    border: 1px solid rgb(124, 0, 240);
+    cursor: pointer;
+  }
+  .activeTab {
+    background-color: rgb(124, 0, 240);
+    border: 1px solid rgb(124, 0, 240);
+  }
+}

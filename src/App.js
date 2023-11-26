@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { FormProvider } from "./contexts/FormContext";
+import styles from "./App.module.scss";
+import FormBuilder from "./components/FormBuilder/FormBuilder";
+import { useState } from "react";
+import pizzaSchema from "./pizza.json";
 function App() {
+  const [uiSchema, setUiSchema] = useState(pizzaSchema);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FormProvider>
+      <div className={styles.app}>
+        <div className={styles.editor}>
+          <textarea
+            fullWidth
+            multiline
+            rows={25}
+            variant="outlined"
+            placeholder="Paste your UI Schema here"
+            value={JSON.stringify(uiSchema, null, 2)}
+            onChange={(e) => setUiSchema(JSON.parse(e.target.value))}
+          />
+        </div>
+        <div className={styles.formBuilder}>
+          <FormBuilder uiSchema={uiSchema} />
+        </div>
+      </div>
+    </FormProvider>
   );
 }
 
